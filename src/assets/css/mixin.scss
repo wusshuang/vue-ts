@@ -1,0 +1,34 @@
+// 边框
+@mixin m-border(
+	$direction: 'all',
+	$size: 1px,
+	$type: solid,
+	$color: $uni-border-color
+) {
+	@if $direction == 'top' {
+		border-top: $size $type $color
+	} @else if $direction == 'right' {
+		border-right: $size $type $color
+	} @else if $direction == 'bottom' {
+		border-bottom: $size $type $color
+	} @else if $direction == 'left' {
+		border-left: $size $type $color
+	} @else {
+		border: 1px solid $uni-border-color;
+	}
+}
+
+// 间距
+@mixin m-spacing(
+	$type: margin,
+	$top: 8upx,
+	$right: 16upx,
+	$bottom: 8upx,
+	$left: 16upx
+) {
+	@if $type == margin {
+		margin: $top $right $bottom $left;
+	} @else {
+		padding: $top $right $bottom $left;
+	}
+}
